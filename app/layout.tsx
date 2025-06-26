@@ -4,6 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
 import Navbar from "@/components/shared/Navbar/Navbar";
 import Footer from "@/components/shared/Footer/Footer";
+import Announcement from "@/components/shared/Announcement";
 
 export const metadata: Metadata = {
   title: "John Lewis & Partners | Department Store | Home, Fashion ...",
@@ -20,6 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <QueryClientProvider client={queryClient}>
+          <Announcement />
           <Navbar />
           <main className="container-padding">{children}</main>
           <Footer />

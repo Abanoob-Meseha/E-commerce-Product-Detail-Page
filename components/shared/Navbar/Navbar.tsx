@@ -1,8 +1,12 @@
+import SiteLogo from "../SiteLogo"
 
 const Navbar = () => {
   return (
-    <div>
-        Navbar
+    <div className="container-padding flex py-8">
+        <SiteLogo/>
+        <div className="">
+
+        </div>
     </div>
   )
 }
