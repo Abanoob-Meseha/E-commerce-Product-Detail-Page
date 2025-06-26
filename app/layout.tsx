@@ -5,7 +5,6 @@ import { queryClient } from "@/lib/queryClient";
 import Navbar from "@/components/shared/Navbar/Navbar";
 import Footer from "@/components/shared/Footer/Footer";
 
-
 export const metadata: Metadata = {
   title: "John Lewis & Partners | Department Store | Home, Fashion ...",
   description:
@@ -21,9 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <QueryClientProvider client={queryClient}>
-          <Navbar/>
-          {children}
-          <Footer/>
+          <Navbar />
+          <main className="container-padding">{children}</main>
+          <Footer />
         </QueryClientProvider>
       </body>
     </html>

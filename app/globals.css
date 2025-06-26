@@ -2,19 +2,19 @@
 
 :root {
   --background: #ffffff;
-  --background-secondary: #F2F2F2 ;
+  --background-secondary: #f2f2f2;
   --foreground: #141414;
-  --foreground-secondary:#666666 ;
-  --primary: #141414 ;
-  --golden: #FFA439 ;
+  --foreground-secondary: #666666;
+  --primary: #141414;
+  --golden: #ffa439;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-background-secondary: var(--background-secondary);
   --color-foreground: var(--foreground);
-  --color-foreground-secondary:var(--foreground-secondary) ;
-  --color-primary:var(--primary) ;
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-primary: var(--primary);
   --color-golden: var(--golden);
 }
 
@@ -32,6 +32,11 @@ body {
   font-family: "ClashGrotesk-Regular", sans-serif;
 }
 
+.footerDashLine {
+background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='0.5%25' fill='none' stroke='%23333' stroke-width='1' stroke-dasharray='6%2c12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");}
+.container-padding {
+  @apply lg:px-[156px] md:px-[70px] px-[19.5px];
+}
 /* font Setup */
 @font-face {
   font-family: "ClashGrotesk-Extralight";
