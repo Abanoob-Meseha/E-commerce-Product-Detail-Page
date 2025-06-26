@@ -33,7 +33,8 @@ body {
 }
 
 .footerDashLine {
-background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='0.5%25' fill='none' stroke='%23333' stroke-width='1' stroke-dasharray='6%2c12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");}
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='0.5%25' fill='none' stroke='%23A3A3A3FF' stroke-width='1' stroke-dasharray='6%2c12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+}
 .container-padding {
   @apply lg:px-[156px] md:px-[70px] px-[19.5px];
 }

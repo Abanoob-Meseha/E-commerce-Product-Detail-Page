@@ -23,7 +23,7 @@ export default function RootLayout({
         <QueryClientProvider client={queryClient}>
           <Announcement />
           <Navbar />
-          <main className="container-padding">{children}</main>
+          <main className="container-padding footerDashLine">{children}</main>
           <Footer />
         </QueryClientProvider>
       </body>
