@@ -2,20 +2,29 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --background-secondary: #F2F2F2 ;
+  --foreground: #141414;
+  --foreground-secondary:#666666 ;
+  --primary: #141414 ;
+  --golden: #FFA439 ;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
   --color-foreground: var(--foreground);
+  --color-foreground-secondary:var(--foreground-secondary) ;
+  --color-primary:var(--primary) ;
+  --color-golden: var(--golden);
 }
 
-@media (prefers-color-scheme: dark) {
+/* for Auto Check the Browser Mode if Dark Mode */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
