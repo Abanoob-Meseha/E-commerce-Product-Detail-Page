@@ -8,6 +8,8 @@ import { categories } from "@/static";
 import { Menu } from "lucide-react";
 import BurgerMenu from "./BurgerMenu";
 import SearchDialog from "./SearchDialog";
+import SigninDrawer from "./SigninDrawer";
+import WishlistDrawer from "./WishlistDrawer";
 
 const Navbar = () => {
   return (
@@ -19,11 +21,8 @@ const Navbar = () => {
         {/* hidden in mobile view Section */}
         <div className="md:flex hidden items-center gap-8">
           <Dropdown triggerTitle="Categories" menuItems={categories} />
-          <div className="flex gap-2 items-center">
-            <UserSVG className="text-white" />
-            <span>Sign in</span>
-          </div>
-          <HeartSVG className="text-primary cursor-pointer" />
+          <SigninDrawer />
+          <WishlistDrawer/>
         </div>
         <Cart />
         {/* Burger menu in mobile View */}
