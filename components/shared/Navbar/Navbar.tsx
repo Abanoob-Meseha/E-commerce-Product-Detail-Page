@@ -7,6 +7,7 @@ import { Dropdown } from "../Dropdown";
 import { categories } from "@/static";
 import { Menu } from "lucide-react";
 import BurgerMenu from "./BurgerMenu";
+import SearchDialog from "./SearchDialog";
 
 const Navbar = () => {
   return (
@@ -14,7 +15,7 @@ const Navbar = () => {
       <SiteLogo />
       {/* links and search section */}
       <div className="flex gap-8 items-center">
-        <SearchSVG className="text-white" />
+        <SearchDialog />
         {/* hidden in mobile view Section */}
         <div className="md:flex hidden items-center gap-8">
           <Dropdown triggerTitle="Categories" menuItems={categories} />
@@ -26,7 +27,7 @@ const Navbar = () => {
         </div>
         <Cart />
         {/* Burger menu in mobile View */}
-        <BurgerMenu/>
+        <BurgerMenu />
       </div>
     </div>
   );

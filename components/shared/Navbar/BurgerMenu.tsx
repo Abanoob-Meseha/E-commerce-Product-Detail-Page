@@ -23,10 +23,6 @@ const BurgerMenu = () => {
         align="start"
       >
         <DropdownMenuItem className="flex items-center gap-3">
-          <LayoutList size={18}/>
-          <Dropdown triggerTitle="Categories" menuItems={categories} />
-        </DropdownMenuItem>
-        <DropdownMenuItem className="flex items-center gap-3">
           <HeartSVG className="text-white" />
           Wishlist
         </DropdownMenuItem>
@@ -37,6 +33,10 @@ const BurgerMenu = () => {
         <DropdownMenuItem className="flex items-center gap-3">
           <EmailSVG className="text-white" />
           Contact us
+        </DropdownMenuItem>
+        <DropdownMenuItem className="flex items-center gap-3">
+          <LayoutList size={18} />
+          <Dropdown triggerTitle="Categories" menuItems={categories} />
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
