@@ -5,22 +5,22 @@ export const shopLinks = {
     {
       id: 1,
       name: "My Account",
-      href: "/My Account"
+      href: "/My Account",
     },
     {
       id: 2,
       name: "Login",
-      href: "/Login"
+      href: "/Login",
     },
     {
       id: 3,
       name: "Whishlist",
-      href: "/Whishlist"
+      href: "/Whishlist",
     },
     {
       id: 4,
       name: "Cart",
-      href: "/Cart"
+      href: "/Cart",
     },
   ],
 };
@@ -44,3 +44,63 @@ export const companyLinks = {
     { id: 4, name: "Contact Us", href: "/contact" },
   ],
 };
+
+// navbar categories Items
+export const categories = [
+  {
+    id: 1,
+    name: "Wears",
+    link: "/",
+  },
+  {
+    id: 2,
+    name: "Shoes",
+    link: "/",
+  },
+  {
+    id: 3,
+    name: "Sports",
+    link: "/",
+  },
+  {
+    id: 4,
+    name: "Electronics",
+    link: "/",
+  },
+];
+
+export const currencies = [
+  {
+    id:1 ,
+    name: "USD",
+    link:"/"
+  },
+  {
+    id:2 ,
+    name: "EGP",
+    link:"/"
+  },
+  {
+    id:3 ,
+    name: "EUR",
+    link:"/"
+  },
+]
+
+export const languages = [
+  {
+    id:1 ,
+    name: "English",
+    link:"/"
+  },
+  {
+    id:2 ,
+    name: "French",
+    link:"/"
+  },
+  {
+    id:3 ,
+    name: "Arabic",
+    link:"/"
+  },
+]
