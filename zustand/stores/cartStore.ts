@@ -7,6 +7,7 @@ type CartState = {
   addToCart: (product: tProduct) => void;
   removeFromCart: (id: string) => void;
   clearCart: () => void;
+  decreaseQuantity: (id: string) => void; // ✅ أضفنا دي
 };
 
 export const useCartStore = create<CartState>()(
@@ -28,6 +29,17 @@ export const useCartStore = create<CartState>()(
     clearCart: () =>
       set((state) => {
         state.cart = [];
+      }),
+    decreaseQuantity: (id) =>
+      set((state) => {
+        const existing = state.cart.find((p) => p.id === id);
+        if (existing) {
+          if (existing.quantity > 1) {
+            existing.quantity -= 1;
+          } else {
+            state.cart = state.cart.filter((p) => p.id !== id);
+          }
+        }
       }),
   }))
 );

@@ -4,6 +4,7 @@ import ArrowDownSVG from "@/public/assets/svg_tsx/ArrowDownSVG";
 import UserSVG from "@/public/assets/svg_tsx/UserSVG";
 import HeartSVG from "@/public/assets/svg_tsx/HeartSVG";
 import CartSVG from "@/public/assets/svg_tsx/CartSVG";
+import Cart from "./Cart/Cart";
 
 const Navbar = () => {
   return (
@@ -20,13 +21,8 @@ const Navbar = () => {
           <UserSVG className="text-white" />
           <span>Sign in</span>
         </div>
-        <HeartSVG className="text-white" />
-        <div className="relative">
-          <CartSVG className="text-white" />
-          <span className="text-white flex items-center justify-center text-[8px] font-bold p-2 w-[13px] h-[13px] rounded-full absolute -right-1 -top-2 bg-primary">
-            2
-          </span>
-        </div>
+        <HeartSVG className="text-primary cursor-pointer" />
+        <Cart />
       </div>
     </div>
   );

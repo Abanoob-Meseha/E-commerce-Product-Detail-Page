@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "../Button";
 import ArrowDownSVG from "@/public/assets/svg_tsx/ArrowDownSVG";
+import { Button } from "@/components/ui/button";
 
 const SubscribeForm = () => {
   return (
