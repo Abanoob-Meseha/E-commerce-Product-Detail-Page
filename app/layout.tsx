@@ -5,6 +5,7 @@ import { queryClient } from "@/lib/queryClient";
 import Navbar from "@/components/shared/Navbar/Navbar";
 import Footer from "@/components/shared/Footer/Footer";
 import Announcement from "@/components/shared/Announcement";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "John Lewis & Partners | Department Store | Home, Fashion ...",
@@ -25,11 +26,12 @@ export default function RootLayout({
           <Navbar />
           <main className="container-padding">
             {/* dashline after Navbar */}
-            <div className="footerDashLine h-1"/>
+            <div className="footerDashLine h-1" />
             {/* page Content */}
             {children}
           </main>
           <Footer />
+          <Toaster />
         </QueryClientProvider>
       </body>
     </html>
