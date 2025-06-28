@@ -9,11 +9,10 @@ import {
 import Image from "next/image";
 import CarouselActions from "./CarouselActions";
 import ZoomImage from "./ZoomImage";
-type tCarouselProps = {
-  thumb: string;
-  images: string[];
-};
-const ProductCarousel = ({ thumb, images }: tCarouselProps) => {
+import { tProduct } from "@/types";
+
+const ProductCarousel = ({ product }: {product: tProduct}) => {
+  const {thumb , images} = product ;
   const carouselImages = [thumb, ...images];
   return (
     <div className="lg:w-[545px] w-full">
@@ -34,7 +33,7 @@ const ProductCarousel = ({ thumb, images }: tCarouselProps) => {
           ))}
         </CarouselContent>
         {/* Navigation , share and Add to Wishlist */}
-        <CarouselActions />
+        <CarouselActions product={product}/>
       </Carousel>
       {/* images Container */}
       <div className="flex gap-5 lg:w-[458px] w-[280px] overflow-x-auto mt-6 ">

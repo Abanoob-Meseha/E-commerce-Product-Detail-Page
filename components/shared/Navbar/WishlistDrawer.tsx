@@ -1,7 +1,21 @@
-import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from '@/components/ui/drawer'
-import HeartSVG from '@/public/assets/svg_tsx/HeartSVG'
-import React from 'react'
+"use client"
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+import HeartSVG from "@/public/assets/svg_tsx/HeartSVG";
+import { useWishlistStore } from "@/zustand/stores/wishlistStore";
+import React from "react";
+import WishlistCard from "../WishlistCard";
 const WishlistDrawer = () => {
+  const { wishlist } = useWishlistStore();
+
   return (
     <Drawer direction="right">
       <DrawerTrigger asChild>
@@ -20,15 +34,18 @@ const WishlistDrawer = () => {
               your Wishlist products
             </DrawerDescription>
           </DrawerHeader>
-
+          <div className="flex flex-col w-full gap-4">
+            {wishlist.map((product) => (
+              <WishlistCard key={product.id} productId={product.id} />
+            ))}
+          </div>
           <DrawerFooter>
             <DrawerClose asChild></DrawerClose>
           </DrawerFooter>
         </div>
       </DrawerContent>
     </Drawer>
+  );
+};
 
-  )
-}
-
-export default WishlistDrawer
+export default WishlistDrawer;

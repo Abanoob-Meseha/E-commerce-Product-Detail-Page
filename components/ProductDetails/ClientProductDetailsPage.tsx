@@ -27,10 +27,7 @@ const ClientProductDetailsPage = () => {
       {/* product Section */}
       <Breadcrumb product={productData} />
       <div className="flex flex-col lg:flex-row gap w-full justify-between">
-        <ProductCarousel
-          thumb={productData.thumb}
-          images={productData.images}
-        />
+        <ProductCarousel product={productData} />
         <DetailsSection product={productData} />
       </div>
 
@@ -43,9 +40,9 @@ const ClientProductDetailsPage = () => {
       </div>
 
       <div className="footerDashLine h-1 my-10" />
-      
+
       {/* product Reviews Section */}
-      <ReviewsSection/>
+      <ReviewsSection />
 
       <div className="footerDashLine h-1 my-10" />
 
