@@ -2,10 +2,9 @@
 
 import { getProduct } from "@/utils/productQueries";
 import { useQuery } from "@tanstack/react-query";
-import { Loader2 } from "lucide-react";
-import { notifyError } from "../shared/notify";
 import Breadcrumb from "./Breadcrumb";
 import SiteLoader from "../shared/SiteLoader";
+import ProductCarousel from "./ProductCarousel/ProductCarousel";
 
 const ClientProductDetailsPage = () => {
   const {
@@ -17,10 +16,11 @@ const ClientProductDetailsPage = () => {
     queryFn: getProduct,
   });
   if (isLoading) return <SiteLoader/>;
-  if (error) return <p>Error Getting Data</p>;
+  if (error || !productData) return <p>Error Getting Data</p>;
   return (
     <div>
       <Breadcrumb product={productData} />
+      <ProductCarousel thumb={productData.thumb} images={productData.images}/>
     </div>
   );
 };
