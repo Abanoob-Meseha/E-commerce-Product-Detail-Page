@@ -31,7 +31,7 @@ const ReviewsTabs = ({ activeTab, setActiveTab }: tReviewsTabProps) => {
     },
   ];
   return (
-    <div className="flex gap-2 items-center">
+    <div className="flex gap-2 items-center w-[80%] lg:w-full flex-wrap lg:flex-nowrap">
       {tabs.map(({ id, title, value }) => {
         return (
           <Button

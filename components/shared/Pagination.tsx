@@ -12,39 +12,69 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: Props) => {
   const renderPages = () => {
     const pages = [];
 
-    // Always show page 1
-    pages.push(
-      <Button
-        key={1}
-        variant={currentPage === 1 ? "outline" : "secondary"}
-        onClick={() => onPageChange(1)}
-      >
-        1
-      </Button>
-    );
-
-    // Show page 2
-    if (totalPages > 1) {
+    if (totalPages <= 5) {
+      // Show all pages
+      for (let i = 1; i <= totalPages; i++) {
+        pages.push(
+          <Button
+            key={i}
+            variant={currentPage === i ? "outline" : "secondary"}
+            onClick={() => onPageChange(i)}
+          >
+            {i}
+          </Button>
+        );
+      }
+    } else {
+      // Always show first page
       pages.push(
         <Button
-          key={2}
-          variant={currentPage === 2 ? "outline" : "secondary"}
-          onClick={() => onPageChange(2)}
+          key={1}
+          variant={currentPage === 1 ? "outline" : "secondary"}
+          onClick={() => onPageChange(1)}
         >
-          2
-        </Button>
-      );
-    }
-
-    // Add "..." if more than 3 pages
-    if (totalPages > 3) {
-      pages.push(
-        <Button variant={"secondary"} key="dots" className="px-4 text-muted-foreground">
-          ...
+          1
         </Button>
       );
 
-      // Last page
+      // Show left dots if needed
+      if (currentPage > 3) {
+        pages.push(
+          <Button key="dots1" variant="secondary" disabled>
+            ...
+          </Button>
+        );
+      }
+
+      // Show current, previous, next pages
+      const middlePages = [
+        currentPage - 1,
+        currentPage,
+        currentPage + 1,
+      ].filter((p) => p > 1 && p < totalPages);
+
+      middlePages.forEach((page) => {
+        pages.push(
+          <Button
+            key={page}
+            variant={currentPage === page ? "outline" : "secondary"}
+            onClick={() => onPageChange(page)}
+          >
+            {page}
+          </Button>
+        );
+      });
+
+      // Show right dots if needed
+      if (currentPage < totalPages - 2) {
+        pages.push(
+          <Button key="dots2" variant="secondary" disabled>
+            ...
+          </Button>
+        );
+      }
+
+      // Always show last page
       pages.push(
         <Button
           key={totalPages}
@@ -67,7 +97,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: Props) => {
         onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
-        <ArrowDownSVG className="text-primary rotate-90"/>
+        <ArrowDownSVG className="text-primary rotate-90" />
       </Button>
 
       {/* Pages */}
@@ -81,7 +111,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: Props) => {
         }
         disabled={currentPage === totalPages}
       >
-        <ArrowDownSVG className="text-primary -rotate-90"/>
+        <ArrowDownSVG className="text-primary -rotate-90" />
       </Button>
     </nav>
   );

@@ -290,3 +290,26 @@ export const customerReviews: tCustomerReview[] = [
     review: "Satisfactory overall.",
   },
 ];
+
+export const filterReviewTopics = [
+  {
+    id: 1,
+    name: "Product Quality",
+  },
+  {
+    id: 2,
+    name: "Seller Services",
+  },
+  {
+    id: 3,
+    name: "Product Price",
+  },
+  {
+    id: 4,
+    name: "Shipment",
+  },
+  {
+    id: 5,
+    name: "Match with Description",
+  },
+];
