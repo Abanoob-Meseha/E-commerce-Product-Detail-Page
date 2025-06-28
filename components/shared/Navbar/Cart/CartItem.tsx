@@ -1,32 +1,70 @@
-import { tProduct } from "@/types";
 import { Trash } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import { useCartStore } from "@/zustand/stores/cartStore";
 import { Button } from "@/components/ui/button";
 
-const CartItem = ({ product }: { product: tProduct }) => {
-    const {addToCart , decreaseQuantity} = useCartStore()
+const CartItem = ({ productId }: { productId: string }) => {
+  const { cart, addToCart, decreaseQuantity, removeFromCart } = useCartStore();
+  const product = cart.find((p) => p.id === productId);
+
+  if (!product) return null;
+
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex flex-col sm:flex-row gap-4 p-4 border rounded-xl shadow-sm bg-white hover:bg-muted/40 transition">
       {/* image */}
-      <div className="w-[100px] h-[130px]">
-        <Image src={product.thumb} alt="Product image" fill />
+      <div className="relative w-full sm:w-[130px] aspect-[3/2] rounded-md overflow-hidden">
+        <Image
+          src={product.thumb}
+          alt="Product image"
+          fill
+          className="object-cover"
+        />
       </div>
-      {/* name , category and price */}
-      <div>
-        <h1>{product.name}</h1>
-        <span className="text-foreground-secondary">{product.slug}</span>
-        <span>{product.price}</span>
-      </div>
-      {/* Quantity and remove Btn */}
-      <div>
-        <Trash />
-        {/* quantity counter */}
-        <div className="flex gap-2 items-center">
-          <Button variant="secondary" onClick={()=> decreaseQuantity(product.id)}> - </Button>
-          <span> {product.quantity} </span>
-          <Button variant="secondary" onClick={()=> addToCart(product)} > + </Button>
+
+      {/* product info */}
+      <div className="flex flex-col justify-between flex-1 gap-2">
+        <div className="flex justify-between items-start">
+          <div className="space-y-1">
+            <h1 className="font-semibold text-lg">{product.name}</h1>
+            <p className="text-sm text-muted-foreground">{product.slug}</p>
+          </div>
+          {/* remove button */}
+          <Trash
+            size={20}
+            className="text-red-500 hover:text-red-600 cursor-pointer transition"
+            onClick={() => removeFromCart(product.id)}
+          />
+        </div>
+
+        {/* price & quantity */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mt-2">
+          <span className="text-primary font-bold text-lg">
+            ${product.sale_price.toFixed(2)}
+          </span>
+
+          {/* quantity counter */}
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => decreaseQuantity(product.id)}
+              className="w-8 h-8"
+            >
+              –
+            </Button>
+            <span className="font-medium w-6 text-center">
+              {product.quantity}
+            </span>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => addToCart({ ...product, quantity: 1 })}
+              className="w-8 h-8"
+            >
+              +
+            </Button>
+          </div>
         </div>
       </div>
     </div>

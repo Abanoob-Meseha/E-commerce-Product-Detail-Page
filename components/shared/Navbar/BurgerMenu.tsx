@@ -36,7 +36,7 @@ const BurgerMenu = () => {
         </DropdownMenuItem>
         <DropdownMenuItem className="flex items-center gap-3">
           <LayoutList size={18} />
-          <Dropdown triggerTitle="Categories" menuItems={categories} />
+          Categories
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

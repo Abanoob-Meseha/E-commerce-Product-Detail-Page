@@ -47,7 +47,7 @@ const DetailsSection = ({ product }: { product: tProduct }) => {
       />
 
       {/* Checkout Section */}
-      <CheckoutBtnSection />
+      <CheckoutBtnSection product={product}/>
     </div>
   );
 };

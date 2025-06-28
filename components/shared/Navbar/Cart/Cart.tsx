@@ -19,7 +19,7 @@ import NonEmptyCart from "./NonEmptyCart";
 const Cart = () => {
   const { cart } = useCartStore();
   return (
-    <Drawer direction="right">
+    <Drawer direction="right" >
       <DrawerTrigger asChild>
         <div className="relative cursor-pointer">
           <CartSVG className="text-white" />
@@ -28,7 +28,7 @@ const Cart = () => {
           </span>
         </div>
       </DrawerTrigger>
-      <DrawerContent>
+      <DrawerContent className="lg:min-w-[40%] w-full">
         <div className="mx-auto w-full max-w-sm p-2 flex flex-col items-center">
           <DrawerHeader>
             <DrawerTitle className="text-2xl flex items-center gap-2">
@@ -40,11 +40,7 @@ const Cart = () => {
             </DrawerDescription>
           </DrawerHeader>
 
-          {cart.length == 0 ? (
-            <NonEmptyCart products={cart}/>
-          ) : (
-            <EmptyCart/>
-          )}
+          {cart.length == 0 ? <EmptyCart /> : <NonEmptyCart products={cart} />}
           <DrawerFooter>
             <DrawerClose asChild></DrawerClose>
           </DrawerFooter>

@@ -17,9 +17,9 @@ const ReviewFilterDrawer = () => {
   return (
     <Drawer direction="left">
       <DrawerTrigger className="flex lg:hidden">
-        <Button variant={"outline"}>
+        <div className="p-2 rounded-md border-1 border-primary bg-secondary cursor-pointer">
           <Filter className="text-primary" />
-        </Button>
+        </div>
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>

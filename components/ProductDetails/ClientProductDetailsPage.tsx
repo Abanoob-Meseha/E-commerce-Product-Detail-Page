@@ -23,7 +23,7 @@ const ClientProductDetailsPage = () => {
   if (isLoading) return <SiteLoader />;
   if (error || !productData) return <p>Error Getting Data</p>;
   return (
-    <div>
+    <div className="pb-10">
       {/* product Section */}
       <Breadcrumb product={productData} />
       <div className="flex flex-col lg:flex-row gap w-full justify-between">

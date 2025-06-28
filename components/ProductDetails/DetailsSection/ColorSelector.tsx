@@ -34,6 +34,7 @@ const ColorSelector = ({ options, selected, onSelect, type }: Props) => {
               selected.name === color.name ? "ring-2 ring-primary" : ""
             }`}
             onClick={() => onSelect(color)}
+            key={color.name}
           >
             <Image
               src={color.value}
