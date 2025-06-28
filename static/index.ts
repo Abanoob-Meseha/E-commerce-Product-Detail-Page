@@ -1,3 +1,5 @@
+import { tCollectProduct } from "@/types";
+
 // footer Links
 export const shopLinks = {
   title: "Shop",
@@ -103,4 +105,53 @@ export const languages = [
     name: "Arabic",
     link:"/"
   },
+]
+// collection Products
+export const collectionProducts: tCollectProduct[] = [
+  {
+    id: 1 ,
+    name: "Whistle",
+    category: "Wide Leg Cropped Jeans, Denim",
+    price: 26,
+    rating :4.5 ,
+    sold_count: 1450,
+    img:"/assets/images/demo-product-img.png"
+  },
+  {
+    id: 2 ,
+    name: "Whistle",
+    category: "Wide Leg Cropped Jeans, Denim",
+    price: 26,
+    rating :4.5 ,
+    sold_count: 1450,
+    img:"/assets/images/demo-product-img.png"
+  },
+  {
+    id: 3 ,
+    name: "Whistle",
+    category: "Wide Leg Cropped Jeans, Denim",
+    price: 26,
+    rating :4.5 ,
+    sold_count: 1450,
+    img:"/assets/images/demo-product-img.png"
+  },
+  {
+    id: 4 ,
+    name: "Whistle",
+    category: "Wide Leg Cropped Jeans, Denim",
+    price: 26,
+    rating :4.5 ,
+    sold_count: 1450,
+    img:"/assets/images/demo-product-img.png"
+  },
+  {
+    id: 5 ,
+    name: "Whistle",
+    category: "Wide Leg Cropped Jeans, Denim",
+    price: 26,
+    rating :4.5 ,
+    sold_count: 1450,
+    img:"/assets/images/demo-product-img.png"
+  },
+  
 ]

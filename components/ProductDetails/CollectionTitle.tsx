@@ -1,8 +1,18 @@
+import Link from "next/link";
 
-const CollectionTitle = () => {
+type tCollectionTitle = {
+  title: string;
+  seeAllLink: string;
+};
+const CollectionTitle = ({ title, seeAllLink }: tCollectionTitle) => {
   return (
-    <div>CollectionTitle</div>
-  )
-}
+    <div className="pb-6 flex justify-between items-center">
+      <h1 className="text-lg font-bold">{title}</h1>
+      <Link href={seeAllLink} className="text-sm underline">
+        View All
+      </Link>
+    </div>
+  );
+};
 
-export default CollectionTitle
+export default CollectionTitle;

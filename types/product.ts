@@ -8,7 +8,7 @@ export type tProductVariationProp = {
 export type tProductVariation = {
   id: string;
   name: string;
-  type: 'image' | 'button' | string;
+  type: "image" | "button" | string;
   product_id: string;
   props: tProductVariationProp[];
 };
@@ -40,8 +40,8 @@ export type tProductCategory = {
   store_id: string;
   show_in_header: boolean;
   position: number;
-  children: any;     // or null
-  products: any;     // or null
+  children: any; // or null
+  products: any; // or null
 };
 
 export type tDigitalLink = {
@@ -96,4 +96,15 @@ export type tProduct = {
   variants: tProductVariant[];
   categories: tProductCategory[];
   digital_link: tDigitalLink;
+};
+
+// for just Demo
+export type tCollectProduct = {
+  id: number;
+  name: string;
+  category: string;
+  price: number;
+  rating: number;
+  sold_count: number;
+  img: string ;
 };

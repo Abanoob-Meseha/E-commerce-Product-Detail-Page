@@ -6,6 +6,8 @@ import Breadcrumb from "./Breadcrumb";
 import SiteLoader from "../shared/SiteLoader";
 import ProductCarousel from "./ProductCarousel/ProductCarousel";
 import DetailsSection from "./DetailsSection/DetailsSection";
+import CollectionTitle from "./CollectionTitle";
+import ProductCollection from "./ProductCollection";
 
 const ClientProductDetailsPage = () => {
   const {
@@ -26,7 +28,19 @@ const ClientProductDetailsPage = () => {
           thumb={productData.thumb}
           images={productData.images}
         />
-        <DetailsSection product={productData}/>
+        <DetailsSection product={productData} />
+      </div>
+
+      <div className="footerDashLine h-1 my-10" />
+      <div>
+        <CollectionTitle seeAllLink="/" title="Related Products" />
+        <ProductCollection />
+      </div>
+      <div className="footerDashLine h-1 my-10" />
+
+      <div>
+        <CollectionTitle seeAllLink="/" title="Popular this week" />
+        <ProductCollection />
       </div>
     </div>
   );
