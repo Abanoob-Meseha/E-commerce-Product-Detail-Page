@@ -3,12 +3,30 @@ import Image from "next/image";
 import React from "react";
 import { useCartStore } from "@/zustand/stores/cartStore";
 import { Button } from "@/components/ui/button";
+import { notifyError } from "../../notify";
 
 const CartItem = ({ productId }: { productId: string }) => {
   const { cart, addToCart, decreaseQuantity, removeFromCart } = useCartStore();
   const product = cart.find((p) => p.id === productId);
 
   if (!product) return null;
+  const maxQty = product.max_quantity || 10; // default max
+
+  const handleIncrease = () => {
+    if (product.quantity >= maxQty) {
+      notifyError(`Maximum quantity is ${maxQty}`);
+      return;
+    }
+    addToCart({ ...product, quantity: 1 });
+  };
+
+  const handleDecrease = () => {
+    if (product.quantity === 1) {
+      notifyError("Minimum quantity is 1");
+      return;
+    }
+    decreaseQuantity(product.id);
+  };
 
   return (
     <div className="flex flex-col sm:flex-row gap-4 p-4 border rounded-xl shadow-sm bg-white hover:bg-muted/40 transition">
@@ -48,7 +66,7 @@ const CartItem = ({ productId }: { productId: string }) => {
             <Button
               variant="outline"
               size="icon"
-              onClick={() => decreaseQuantity(product.id)}
+              onClick={() => handleDecrease()}
               className="w-8 h-8"
             >
               –
@@ -59,7 +77,7 @@ const CartItem = ({ productId }: { productId: string }) => {
             <Button
               variant="outline"
               size="icon"
-              onClick={() => addToCart({ ...product, quantity: 1 })}
+              onClick={() => handleIncrease()}
               className="w-8 h-8"
             >
               +
