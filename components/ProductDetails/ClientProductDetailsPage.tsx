@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 import { notifyError } from "../shared/notify";
 import Breadcrumb from "./Breadcrumb";
+import SiteLoader from "../shared/SiteLoader";
 
 const ClientProductDetailsPage = () => {
   const {
@@ -15,7 +16,7 @@ const ClientProductDetailsPage = () => {
     queryKey: ["productDetails"],
     queryFn: getProduct,
   });
-  if (isLoading) return <Loader2 className="animate-spin" />;
+  if (isLoading) return <SiteLoader/>;
   if (error) return <p>Error Getting Data</p>;
   return (
     <div>
