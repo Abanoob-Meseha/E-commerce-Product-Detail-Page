@@ -9,7 +9,7 @@ type Props = {
   height: number;
 };
 
-const ZoomImage = ({ src, alt = 'zoom image', width, height }: Props) => {
+const ZoomImage = ({ src, alt = 'zoom image' }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [style, setStyle] = useState({ transformOrigin: 'center center' });
 
@@ -30,8 +30,7 @@ const ZoomImage = ({ src, alt = 'zoom image', width, height }: Props) => {
   return (
     <div
       ref={containerRef}
-      className="relative overflow-hidden group"
-      style={{ width, height }}
+      className="relative overflow-hidden group w-full h-full"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >

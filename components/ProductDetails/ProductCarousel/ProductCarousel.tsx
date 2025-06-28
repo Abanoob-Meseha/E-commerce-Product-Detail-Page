@@ -16,13 +16,13 @@ type tCarouselProps = {
 const ProductCarousel = ({ thumb, images }: tCarouselProps) => {
   const carouselImages = [thumb, ...images];
   return (
-    <div className="w-[545px]">
-      <Carousel className="relative w-[458px]">
+    <div className="lg:w-[545px] w-full">
+      <Carousel className="relative lg:w-[458px] w-[280px]">
         <CarouselContent>
           {/* Main Image */}
           {carouselImages.map((img, index) => (
             <CarouselItem
-              className="w-[458px] h-[610px] bg-secondary"
+              className="lg:w-[458px] w-[280px] h-[372px] lg:h-[610px] bg-secondary"
               key={index}
             >
               <ZoomImage
@@ -37,7 +37,7 @@ const ProductCarousel = ({ thumb, images }: tCarouselProps) => {
         <CarouselActions />
       </Carousel>
       {/* images Container */}
-      <div className="flex gap-5 w-[458px] overflow-x-auto mt-6 ">
+      <div className="flex gap-5 lg:w-[458px] w-[280px] overflow-x-auto mt-6 ">
         {images.map((img, index) => (
           <div
             className="w-[76px] h-[100px] contain-content bg-secondary"

@@ -186,7 +186,7 @@ function CarouselPrevious({
       variant={variant}
       size={size}
       className={cn(
-        "size-13 rounded-md shadow-2xl text-black",
+        "size-13 rounded-md shadow-2xl text-primary",
         orientation === "horizontal"
           ? ""
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
