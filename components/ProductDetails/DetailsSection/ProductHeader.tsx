@@ -45,11 +45,11 @@ const ProductHeader = ({
 
         {/* Sold Count and Rating */}
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <span className="text-lg">{soldCount.toLocaleString()} Sold</span>
+          <span className="lg:text-lg text-sm">{soldCount.toLocaleString()} Sold</span>
           <div className="mx-1">•</div>
           <div className="flex items-center gap-1">
             <Star1SVG className="text-golden"/>
-            <span className="text-primary text-2xl font-bold">{rating}</span>
+            <span className="text-primary lg:text-2xl text-lg font-bold">{rating}</span>
           </div>
         </div>
       </div>
