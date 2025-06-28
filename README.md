@@ -1,36 +1,149 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛍️ E-commerce Product Detail Page
 
-## Getting Started
+**A clean, responsive product detail page built with Next.js, TanStack React Query, Zustand, Tailwind CSS & shadcn/ui.**
 
-First, run the development server:
+Based on the task from [ElegantSoft's frontend engineeing challenge](https://github.com/ElegantSoft/frontend-task-2025) — this solution delivers a modern UI/UX experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Project Overview
+
+This repository contains a fully-functional E-commerce Product Detail Page featuring:
+
+- 📊 Product info with images, carousel, zoom, and "see more" description  
+- 🛒 Cart management: add/remove items with quantity controls (with min/max + notifications)  
+- ✅ Persistent cart state using **Zustand** + `persist` middleware  
+- 📦 Variations (color/size), stock tracking, and dynamic subtotal/total calculation  
+- ✨ Rating wheels and star rating components  
+- 🙌 Social sharing integration (Facebook, Twitter, LinkedIn, WhatsApp)  
+- ❤️ Wishlist functionality with Zustand store  
+- 🧪 API integration using **axios** and **React Query**  
+- 📱 Fully responsive UI built with **Tailwind CSS** & **shadcn/ui (Radix-based components)**
+
+---
+
+## 🛠️ Tech Stack
+
+- **Next.js 14** (App Router)  
+- **TypeScript**  
+- **React Query** (TanStack)  
+- **Zustand** (with `immer` + `persist`)  
+- **Tailwind CSS** + **shadcn/ui**  
+- **Sonner** for toast notifications  
+- **lucide-react** for icons  
+- **Axios** for API handling
+
+---
+
+## 🎯 Features
+
+- **ProductCarousel**: zoom & mouse-movement interaction  
+- **ProductVariations**: choose color/size dynamically  
+- **ProductDescription**: expandable, collapsible with “see more…”  
+- **Cart management**: persistent, quantity selector, min/max with notifications  
+- **Subtotal & Total**: auto-calculated including shipping  
+- **Wishlist**: add/remove favorites with persistence  
+- **Social Share**: share product via popular networks  
+- **Rating UI**: star-based and circular progress display  
+- **Pagination**: elegant, dynamic pages with shadcn buttons  
+
+---
+
+## 📁 Project Structure
+
+```
+/
+├─ app/                     # Next.js App Router pages and layouts
+├─ components/             # UI components (ProductHeader, CartItem, etc.)
+├─ hooks/                  # Custom hooks (useQuery, usePagination)
+├─ stores/                 # Zustand stores (cart, wishlist)
+├─ types/                  # Shared TypeScript types
+├─ utils/                  # Utility functions (format, getAvailableSizes)
+├─ public/                 # Static assets (images, fonts, SVGs)
+├─ styles/                 # Global Tailwind and CSS
+└─ README.md               # This file
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚧 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Clone the repo**  
+   ```bash
+   git clone https://github.com/Abanoob-Meseha/E-commerce-Product-Detail-Page.git
+   cd E-commerce-Product-Detail-Page
+   ```
 
-## Learn More
+2. **Install dependencies**  
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. **Set environment variables** *(if needed)*  
+   ```env
+   NEXT_PUBLIC_API_BASE_URL=https://your-api.com
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Development mode**  
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+5. **Production build**  
+   ```bash
+   npm run build
+   npm start
+   ```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔗 Live Demo
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🌐 Deployed on **Vercel**: [https://ecommerce-product-detail.vercel.app](https://ecommerce-product-detail.vercel.app)
+
+---
+
+## 📸 Screenshots
+
+#### 🖥️ Product Detail Page (Desktop)
+![Desktop View](./public/project-demo/image1.png)
+
+#### 📱 Product Variants Selection (Mobile)
+![Mobile View](./public/project-demo/image7.png)
+
+#### 🌟 Product Reviews
+![Product Reviews](./public/project-demo/image3.png)
+
+#### 🔎 Reviews List and Filter
+![Reviews List and Filter](./public/project-demo/image4.png)
+
+#### 🛒 Cart Drawer
+![Cart Drawer](./public/project-demo/image6.png)
+
+#### 📷 Products Collection
+![Products Collection](./public/project-demo/image2.png)
+
+
+---
+
+## 📦 Usage Guide
+
+- ✅ Add product to cart, quantity management
+- 🎨 Choose color and size variations
+- 💬 Expand/collapse long descriptions
+- 🌟 Ratings and review sections with pagination
+- 🔄 Cart persistence using Zustand localStorage
+- 📤 Social share functionality
+
+---
+
+## 📜 License
+
+MIT
+
+---
+
+## 🤝 Credits
+
+This project is based on the official challenge by [ElegantSoft](https://github.com/ElegantSoft/frontend-task-2025).  
+Built by [@Abanoob-Meseha](https://github.com/Abanoob-Meseha)
