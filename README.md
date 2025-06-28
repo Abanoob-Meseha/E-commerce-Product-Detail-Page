@@ -99,7 +99,7 @@ This repository contains a fully-functional E-commerce Product Detail Page featu
 
 ## 🔗 Live Demo
 
-🌐 Deployed on **Vercel**: [https://ecommerce-product-detail.vercel.app](https://ecommerce-product-detail.vercel.app)
+🌐 Deployed on **Vercel**: [https://e-commerce-product-detail-page-abanoobmesehas-projects.vercel.app](https://e-commerce-product-detail-page-abanoobmesehas-projects.vercel.app)
 
 ---
 
