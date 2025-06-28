@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductHeader from "./ProductHeader";
 import ProductDescription from "./ProductDescription";
 import CheckoutBtnSection from "./CheckoutBtnSection";
 import { tProduct } from "@/types";
 import ProductVariations from "./ProductVariations";
+import { getAvailableSizes } from "@/utils";
 type ColorOption = { name: string; value: string };
 type SizeOption = { id: string; name: string; variation_id: string };
-
 
 const DetailsSection = ({ product }: { product: tProduct }) => {
   const colorVariation = product.variations.find((v) => v.name === "color");
@@ -17,6 +17,15 @@ const DetailsSection = ({ product }: { product: tProduct }) => {
   const [selectedSize, setSelectedSize] = useState<SizeOption | null>(
     sizeVariation?.props?.[0] ?? null
   );
+  const availableSizes = getAvailableSizes(product, selectedColor?.name || "");
+
+  useEffect(() => {
+    if (availableSizes.length > 0) {
+      setSelectedSize(availableSizes[0]);
+    } else {
+      setSelectedSize(null);
+    }
+  }, [selectedColor]);
 
   return (
     <div className="flex flex-col w-full lg:w-[480px] gap-6">
@@ -30,7 +39,7 @@ const DetailsSection = ({ product }: { product: tProduct }) => {
       {/* color and color variant */}
       <ProductVariations
         colorOptions={colorVariation?.props || []}
-        sizeOptions={sizeVariation?.props || []}
+        sizeOptions={availableSizes}
         selectedColor={selectedColor}
         onSelectColor={setSelectedColor}
         selectedSize={selectedSize}
