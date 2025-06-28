@@ -108,3 +108,10 @@ export type tCollectProduct = {
   sold_count: number;
   img: string ;
 };
+
+export type tBarRating = {
+  id: number ;
+  rating: number ;
+  percentage: number ;
+  ratingsCount: number;
+}

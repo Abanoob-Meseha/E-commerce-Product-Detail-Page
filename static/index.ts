@@ -1,4 +1,4 @@
-import { tCollectProduct } from "@/types";
+import { tBarRating, tCollectProduct } from "@/types";
 
 // footer Links
 export const shopLinks = {
@@ -154,4 +154,37 @@ export const collectionProducts: tCollectProduct[] = [
     img:"/assets/images/demo-product-img.png"
   },
   
+]
+
+export const barRatings : tBarRating[]= [
+  {
+    id: 1 ,
+    rating: 5 ,
+    percentage: 80 ,
+    ratingsCount: 2823
+  },
+  {
+    id: 2 ,
+    rating: 4 ,
+    percentage: 50 ,
+    ratingsCount: 84
+  },
+  {
+    id: 3 ,
+    rating: 3 ,
+    percentage: 10 ,
+    ratingsCount: 4
+  },
+  {
+    id: 4 ,
+    rating: 2 ,
+    percentage: 0 ,
+    ratingsCount: 0
+  },
+  {
+    id: 5 ,
+    rating: 1 ,
+    percentage: 0 ,
+    ratingsCount: 0
+  },
 ]

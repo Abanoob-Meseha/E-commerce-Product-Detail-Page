@@ -8,6 +8,7 @@ import ProductCarousel from "./ProductCarousel/ProductCarousel";
 import DetailsSection from "./DetailsSection/DetailsSection";
 import CollectionTitle from "./CollectionTitle";
 import ProductCollection from "./ProductCollection";
+import ProductReviews from "./ProductReviews";
 
 const ClientProductDetailsPage = () => {
   const {
@@ -37,7 +38,8 @@ const ClientProductDetailsPage = () => {
         <ProductCollection />
       </div>
       <div className="footerDashLine h-1 my-10" />
-
+      <ProductReviews />
+      <div className="footerDashLine h-1 my-10" />
       <div>
         <CollectionTitle seeAllLink="/" title="Popular this week" />
         <ProductCollection />
