@@ -6,9 +6,10 @@ import Breadcrumb from "./Breadcrumb";
 import SiteLoader from "../shared/SiteLoader";
 import ProductCarousel from "./ProductCarousel/ProductCarousel";
 import DetailsSection from "./DetailsSection/DetailsSection";
-import CollectionTitle from "./CollectionTitle";
-import ProductCollection from "./ProductCollection";
-import ProductReviews from "./ProductReviews";
+import CollectionTitle from "./Collections/CollectionTitle";
+import ProductCollection from "./Collections/ProductCollection";
+import ProductReviews from "./Reviews/ProductReviews";
+import ReviewsSection from "./Reviews/ReviewsSection";
 
 const ClientProductDetailsPage = () => {
   const {
@@ -23,6 +24,7 @@ const ClientProductDetailsPage = () => {
   if (error || !productData) return <p>Error Getting Data</p>;
   return (
     <div>
+      {/* product Section */}
       <Breadcrumb product={productData} />
       <div className="flex flex-col lg:flex-row gap w-full justify-between">
         <ProductCarousel
@@ -33,13 +35,21 @@ const ClientProductDetailsPage = () => {
       </div>
 
       <div className="footerDashLine h-1 my-10" />
+
+      {/* related product Collection section*/}
       <div>
         <CollectionTitle seeAllLink="/" title="Related Products" />
         <ProductCollection />
       </div>
+
       <div className="footerDashLine h-1 my-10" />
-      <ProductReviews />
+      
+      {/* product Reviews Section */}
+      <ReviewsSection/>
+
       <div className="footerDashLine h-1 my-10" />
+
+      {/* popular product collection section */}
       <div>
         <CollectionTitle seeAllLink="/" title="Popular this week" />
         <ProductCollection />

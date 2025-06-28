@@ -3,7 +3,7 @@ import CircleProgress from "./CircleProgress";
 import StarRating from "./StarRating";
 import { barRatings } from "@/static";
 import Star2SVG from "@/public/assets/svg_tsx/Star2SVG";
-import { Progress } from "../ui/progress";
+import { Progress } from "../../ui/progress";
 
 const ProductReviews = () => {
   const rating = 4.5;

@@ -115,3 +115,14 @@ export type tBarRating = {
   percentage: number ;
   ratingsCount: number;
 }
+
+export type tCustomerReview = {
+  id: string ;
+  rating: number;
+  review: string;
+  date: string;
+  name: string;
+  img: string;
+  likesCount: number;
+  disLikesCount: number;
+};
